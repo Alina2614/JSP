@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      
+      >
+
+    <body>
+
+        <ui:composition template="./masterPage.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <p:panelGrid columns="2">
+                        <f:facet name="header">Exercise Controller Form</f:facet>
+                        <h:outputText value="exercise Id" />
+                        <h:inputText value="#{excerciseController.exercise.excerciseId}" />
+                        
+                         <h:outputText value="exercise Name" />
+                         <h:inputText value="#{excerciseController.exercise.excerciseName}" />
+                         
+                         <h:outputText value="Type" />
+                         <h:inputText value="#{excerciseController.exercise.type}" />
+                        
+                         <h:outputText value="Time" />
+                         <h:inputText value="#{excerciseController.exercise.time}" />
+                         
+                         <h:outputText value="Burn Claorie" />
+                         <h:inputText value="#{excerciseController.exercise.burnCalorie}" />
+                         
+                        
+                        <f:facet name="footer">
+                            <h:commandButton value="New" />
+                            <h:commandButton value="Save" action="#{exerciseController.save}" />
+                            <h:commandButton value="Find" action="#{exerciseController.find}" />
+                            <h:commandButton value="Edit" action="#{exerciseController.edit}" />
+                            <h:commandButton value="Display" action="#{exerciseController.diplay}" />
+                            <h:commandButton value="Delele" action="#{exerciseController.delete}" />
+                            
+                        </f:facet>
+                    </p:panelGrid>
+                    <h:outputText value="#{exerciseController.msg}" />
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

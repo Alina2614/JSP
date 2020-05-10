@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      
+      >
+
+  
+
+    <h:body>
+
+        <ui:composition template="./masterPage.xhtml">
+          
+            
+            <ui:define name="content">
+                <h:form>
+                    <p:panelGrid columns="2">
+                        <f:facet name="header">Meal</f:facet>
+                        <h:outputText value="Meal Id" />
+                        <h:inputText value="#{mealController.meal.mealId}" />
+                        
+                        <h:outputText value="Meal Name" />
+                        <h:inputText value="#{mealController.meal.mealName}" />
+                        
+                         <h:outputText value="Unit" />
+                         <h:inputText value="#{mealController.meal.mealUnit}" />
+                         
+                         <h:outputText value="Calorie" />
+                         <h:inputText value="#{mealController.meal.mealCalorie}" />
+                        
+                        
+                        
+                        <f:facet name="footer">
+                            <h:commandButton value="New" />
+                            <h:commandButton value="Save" action="#{mealController.save}" />
+                            <h:commandButton value="Find" action="#{mealController.find}" />
+                            <h:commandButton value="Edit" action="#{mealController.edit}" />
+                            <h:commandButton value="Display" action="#{mealController.diplay}" />
+                            <h:commandButton value="Delele" action="#{mealController.delete}" />
+                            
+                        </f:facet>
+                    </p:panelGrid>
+                    <h:outputText value="#{mealController.msg}" />
+                </h:form>
+            </ui:define>
+        
+      
+       
+            </ui:composition>
+    </h:body>
+
+</html>

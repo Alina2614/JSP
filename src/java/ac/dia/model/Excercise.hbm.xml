@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 19, 2017 3:16:11 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ac.dia.model.Excercise" table="excercise" catalog="weighttracker" optimistic-lock="version">
+        <id name="excerciseId" type="int">
+            <column name="excerciseId" />
+            <generator class="assigned" />
+        </id>
+        <property name="excerciseName" type="string">
+            <column name="excerciseName" length="30" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="15" />
+        </property>
+        <property name="time" type="java.lang.Integer">
+            <column name="time" />
+        </property>
+        <property name="burnCalorie" type="java.lang.Integer">
+            <column name="burnCalorie" />
+        </property>
+    </class>
+</hibernate-mapping>

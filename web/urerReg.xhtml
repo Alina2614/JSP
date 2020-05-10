@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      
+      >
+
+    <body>
+
+        <ui:composition template="./masterPage.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <p:panelGrid columns="2">
+                        <f:facet name="header">User Registration Form</f:facet>
+                        <h:outputText value="User Id" />
+                        <h:inputText value="#{userController.user.userId}" />
+                        
+                         <h:outputText value="User Name" />
+                         <h:inputText value="#{userController.user.userName}" />
+                         
+                         <h:outputText value="Age" />
+                         <h:inputText value="#{userController.user.age}" />
+                        
+                         <h:outputText value="User Gender" />
+                         <h:inputText value="#{userController.user.gender}" />
+                         
+                         <h:outputText value="User Height" />
+                         <h:inputText value="#{userController.user.height}" />
+                         
+                         <h:outputText value="User Weight" />
+                         <h:inputText value="#{userController.user.weight}" />
+                         
+                         <h:outputText value="User Body Messages Index" />
+                         <h:inputText value="#{userController.user.bmi}" />
+                        
+                        <f:facet name="footer">
+                            <h:commandButton value="New" />
+                            <h:commandButton value="Save" action="#{userController.save}" />
+                            <h:commandButton value="Find" action="#{userController.find}" />
+                            <h:commandButton value="Edit" action="#{userController.edit}" />
+                            <h:commandButton value="Display" action="#{userController.diplay}" />
+                            <h:commandButton value="Delele" action="#{userController.delete}" />
+                            
+                        </f:facet>
+                    </p:panelGrid>
+                    <h:outputText value="#{userController.msg}" />
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
